@@ -172,8 +172,7 @@ figure {
 }
 
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
 }
 
@@ -233,8 +232,7 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -349,63 +347,56 @@ big {
 }
 
 .archive .site-header {
-  margin-bottom: 3.5em;
+	margin-bottom: 3.5em;
 }
 
 .site-title {
-  margin: .4375em 0 0;
-  font-size: 38px;
-  font-weight: bold;
-  line-height: 1.2;
-  color: #333332;
+	margin: .4375em 0 0;
+	font-size: 38px;
+	font-weight: bold;
+	line-height: 1.2;
+	color: #333332;
 }
 
 .site-title a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 .site-branding {
-  margin-bottom: 1.75em;
+	margin-bottom: 1.75em;
 }
 
 .site-description {
-  margin: .4375em 0 0;
-  font-size: 17px;
-  font-weight: inherit;
-  line-height: 1.4;
-  word-wrap: break-word;
-  color: #929292;
+	margin: .4375em 0 0;
+	font-size: 17px;
+	font-weight: inherit;
+	line-height: 1.4;
+	word-wrap: break-word;
+	color: #929292;
 }
-
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
   background: #fff;
-  /* Fallback for when there is no custom background color defined. */
-}
+  /* Fallback for when there is no custom background color defined. */ }
 
 blockquote, q {
-  quotes: "" "";
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
-}
+  quotes: "" ""; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: ""; }
 
 hr {
   border: 0;
@@ -570,58 +561,57 @@ a:hover, a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  clear: both;
-  display: block;
+	clear: both;
+	display: block;
   margin: 0 auto;
-  max-width: 636px;
+	max-width: 636px;
   text-align: center;
 }
 
 .main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
 }
 
 .main-navigation ul ul {
-  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 100%;
-  left: -999em;
-  z-index: 99999;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
   text-align: left;
 }
 
 .main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
+	left: -999em;
+	top: 0;
 }
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
-  left: 100%;
+	left: 100%;
 }
 
 .main-navigation ul ul a {
-  width: 200px;
+	width: 200px;
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   display: block;
-  left: auto;
+	left: auto;
 }
 
 .main-navigation li {
-  position: relative;
+	position: relative;
 }
 
 .main-navigation a {
-  display: block;
-  text-decoration: none;
+	display: block;
+	text-decoration: none;
 }
 
 .menu-toggle {
@@ -629,28 +619,24 @@ a:hover, a:active {
 }
 
 @media screen and (max-width: 37.5em) {
-  /* Small menu. */
-  .menu-toggle,
-  .main-navigation.toggled ul {
-    display: block;
+	/* Small menu. */
+	.menu-toggle,
+	.main-navigation.toggled ul {
+		display: block;
     margin: 0 auto;
-  }
+	}
 }
 
 @media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none;
-  }
-  .main-navigation ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap;
   }
+
   .main-navigation a {
     padding: 0 .5em;
   }
@@ -660,34 +646,28 @@ a:hover, a:active {
 .site-main .posts-navigation,
 .site-main .post-navigation {
   border-bottom: 1px solid #111;
-  margin: 0 auto 60px;
+	margin: 0 auto 60px;
   max-width: 636px;
-  overflow: hidden;
+	overflow: hidden;
   padding-bottom: 60px;
 }
 
 .nav-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+	display: flex;
 }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-  width: 50%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 50%;
-          flex: 1 0 50%;
+	width: 50%;
+	flex: 1 0 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-  text-align: end;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 50%;
-          flex: 1 0 50%;
+	text-align: end;
+	flex: 1 0 50%;
 }
 
 /*--------------------------------------------------------------
@@ -707,8 +687,7 @@ a:hover, a:active {
 .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   color: #21759b;
   display: block;
@@ -734,26 +713,26 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
+
 .alignleft,
 .alignright {
-  max-width: 636px !important;
-  /* Let's work to make this !important unnecessary */
+	max-width: 636px !important;	/* Let's work to make this !important unnecessary */
 }
 
 .alignleft img,
 .alignright img,
 .alignleft figcaption,
 .alignright figcaption {
-  max-width: 50%;
-  width: 50%;
+	max-width: 50%;
+	width: 50%;
 }
 
 .alignleft figcaption {
-  clear: left;
+	clear: left;
 }
 
 .alignright figcaption {
-  clear: right;
+	clear: right;
 }
 
 .alignleft img,
@@ -775,11 +754,12 @@ a:hover, a:active {
   margin-right: auto;
 }
 
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 .widget-area {
-  width: 25%;
+	width: 25%;
 }
 
 .widget {
@@ -854,11 +834,11 @@ a:hover, a:active {
   margin-bottom: 1.5em;
 }
 
-.entry-footer span {
+.entry-footer span{
   margin-right: 1em;
 }
 
-.entry-footer {
+.entry-footer{
   color: #aaa;
   font-size: 90%;
   padding-bottom: 40px;
@@ -1001,4 +981,3 @@ object {
 .gallery-caption {
   display: block;
 }
-/*# sourceMappingURL=style.css.map */
