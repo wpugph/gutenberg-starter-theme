@@ -77,6 +77,7 @@ class UIKit3_Walker_Nav_Menu extends Walker_Nav_Menu
 			$n = "\n";
 		}
 		$indent = ( $depth ) ? str_repeat( $t, $depth ) : '';        
+        $item_output = '';
 
         $object     = $item->object;
         $type       = $item->type;
