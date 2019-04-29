@@ -1,11 +1,14 @@
 <?php
 /**
- * teamwpugph functions and definitions
+ * TeamWPUGPH functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package TeamWPUGPHTheme
  */
+
+require get_template_directory() . '/inc/defines.php';
+require get_template_directory() . '/inc/custom-settings.php';
 
 if ( ! function_exists( 'teamwpugph_setup' ) ) :
 	/**
@@ -161,19 +164,31 @@ function teamwpugph_fonts_url() {
  * Enqueue scripts and styles.
  */
 function teamwpugph_scripts() {
-	wp_enqueue_style( 'gutenbergbase-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'teamwpugphblocks-style', get_template_directory_uri() . '/css/blocks.css' );
+	if (defined('WP_DEBUG') && true === WP_DEBUG) {
 
+		$mainstyles		= '/style.css';
+		$blockstyles 	= '/css/blocks.css';
+		
+		$uikitjs		= '/lib/uikit/dist/uikit.js';
+		$uikiticonsjs	= '/lib/uikit/dist/uikit-icons.js';
+
+	} else {
+
+		$mainstyles		= '/style.min.css';
+		$blockstyles 	= '/css/blocks.css';
+
+		$uikitjs		= '/lib/uikit/dist/js/uikit.min.js';
+		$uikiticonsjs	= '/lib/uikit/dist/js/uikit-icons.min.js';
+
+	}
+
+	wp_enqueue_style( 'teamwpugph-style', get_stylesheet_directory_uri() . $mainstyles );
+	wp_enqueue_style( 'teamwpugph-blocks-style', get_stylesheet_directory_uri() . $blockstyles );
 	wp_enqueue_style( 'teamwpugph-fonts', teamwpugph_fonts_url() );
 
-	wp_enqueue_script( 'teamwpugph-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'teamwpugph-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script( 'uikit', get_stylesheet_directory_uri() . $uikitjs, array(), '3.1.2', false );
+	wp_enqueue_script( 'uikit-icons', get_stylesheet_directory_uri() . $uikiticonsjs, array(), '3.1.2', false );
 }
 add_action( 'wp_enqueue_scripts', 'teamwpugph_scripts' );
 
@@ -181,6 +196,7 @@ add_action( 'wp_enqueue_scripts', 'teamwpugph_scripts' );
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-menu.php';
 
 /**
  * Custom template tags for this theme.

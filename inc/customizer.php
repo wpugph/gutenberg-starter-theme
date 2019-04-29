@@ -1,6 +1,6 @@
 <?php
 /**
- * teamwpugph Theme Customizer
+ * TeamWPUGPH Theme Customizer
  *
  * @package TeamWPUGPHTheme
  */

@@ -9,7 +9,7 @@
  * @package TeamWPUGPHTheme
  */
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -20,33 +20,51 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'teamwpugph' ); ?></a>
-		<header id="masthead" class="site-header">
-			<div class="site-branding">
-				<?php
-				the_custom_logo();
-				if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>
-			</div><!-- .site-branding -->
+<a class="uk-invisible" href="#main-content" aria-hidden="false"><?php esc_html_e( 'Skip to content', 'teamwpugph' ); ?></a>
 
-			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'teamwpugph' ); ?></button>
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					) );
-				?>
-			</nav><!-- #site-navigation -->
-		</header><!-- #masthead -->
+<!--HEADER-->
+<header data-uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+	<div class="uk-container">
+		<nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+			<div class="uk-navbar-left">
+				<a class="uk-navbar-item uk-logo" href="<?php echo home_url(); ?>">
+					<?php echo the_custom_logo(); ?>
+				</a>
+			</div>
+			<?php
+			wp_nav_menu( array(
+				'container_class'	=> 'uk-navbar-center',
+				'menu_class'		=> 'uk-navbar-nav',
+				'items_wrap'		=> '<ul class="%2$s">%3$s</ul>',
+				'walker'			=> new UIKit3_Walker_Nav_Menu(),
+			) );
+			?>
+			<div class="uk-navbar-right">
+				<ul class="uk-navbar-nav">
+					<li>
+						<a href="#" data-uk-icon="icon:user"></a>
+						<div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left">
+							<ul class="uk-nav uk-navbar-dropdown-nav">
+								<li class="uk-nav-header uk-text-small uk-text-primary">YOUR ACCOUNT</li>
+								<li><a href="#"><span data-uk-icon="icon: info"></span> Summary</a></li>
+								<li><a href="#"><span data-uk-icon="icon: refresh"></span> Edit</a></li>
+								<li><a href="#"><span data-uk-icon="icon: settings"></span> Configuration</a></li>
+								<li class="uk-nav-divider"></li>
+								<li><a href="#"><span data-uk-icon="icon: image"></span> Your Pictures</a></li>
+								<li class="uk-nav-divider"></li>
+								<li><a href="#"><span data-uk-icon="icon: sign-out"></span> Logout</a></li>
+								
+							</ul>
+						</div>
+					</li>
+					<li class="uk-hidden@m"><a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
+<!--/HEADER-->
+
+<main id="main-content">
+	
