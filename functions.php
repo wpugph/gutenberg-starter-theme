@@ -47,7 +47,7 @@ if ( ! function_exists( 'teamwpugph_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'teamwpugph' ),
+			'primary-menu' => esc_html__( 'Primary Menu', 'teamwpugph' ),
 		) );
 
 		/*

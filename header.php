@@ -34,6 +34,7 @@
 			</div>
 			<?php
 			wp_nav_menu( array(
+				'theme_location'	=> 'primary-menu',
 				'container_class'	=> 'uk-navbar-center',
 				'menu_class'		=> 'uk-navbar-nav',
 				'items_wrap'		=> '<ul class="%2$s">%3$s</ul>',
