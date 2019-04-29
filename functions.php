@@ -170,8 +170,8 @@ function teamwpugph_scripts() {
 		$mainstyles		= '/style.css';
 		$blockstyles 	= '/css/blocks.css';
 		
-		$uikitjs		= '/lib/uikit/dist/uikit.js';
-		$uikiticonsjs	= '/lib/uikit/dist/uikit-icons.js';
+		$uikitjs		= '/lib/uikit/dist/js/uikit.js';
+		$uikiticonsjs	= '/lib/uikit/dist/js/uikit-icons.js';
 
 	} else {
 
