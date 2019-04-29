@@ -20,6 +20,7 @@ $org_year = get_option('teamwpugph_org_year', '');
 	<div class="uk-container">
 		<p class="uk-text-small uk-text-center">			
 			<?php printf( esc_html__('Copyright &copy; %s&ndash;%s %s', 'teamwpugph' ), esc_html__( $org_year, 'teamwpugph' ), date( "Y" ), esc_html__( $org_name, 'teamwpugph' ) ); ?>
+			&emsp;
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>">
 			<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
