@@ -11,3 +11,4 @@ The idea of the default look for this theme is to as closely replicate that of t
 - Integrate UIKit 3
 - Basic Gutenblocks for UIkit components
 - WP UIkit Customizer
+- A11y ready
