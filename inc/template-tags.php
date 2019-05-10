@@ -52,7 +52,7 @@ if ( ! function_exists( 'teamwpugph_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'teamwpugph' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'teamwpugph' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<p class="uk-article-meta uk-link-muted">' . esc_html__( 'Posted in %1$s', 'teamwpugph' ) . '</p>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
