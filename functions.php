@@ -167,7 +167,7 @@ function teamwpugph_scripts() {
 
 	if (defined('WP_DEBUG') && true === WP_DEBUG) {
 
-		$mainstyles		= '/style.css';
+		$mainstyles		= '/site.css';
 		$blockstyles 	= '/css/blocks.css';
 		
 		$uikitjs		= '/lib/uikit/dist/js/uikit.js';
@@ -175,7 +175,7 @@ function teamwpugph_scripts() {
 
 	} else {
 
-		$mainstyles		= '/style.min.css';
+		$mainstyles		= '/site.min.css';
 		$blockstyles 	= '/css/blocks.css';
 
 		$uikitjs		= '/lib/uikit/dist/js/uikit.min.js';

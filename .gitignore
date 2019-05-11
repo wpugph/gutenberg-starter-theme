@@ -1,3 +1,4 @@
 *.min.css
 *.map
 scss/*.css
+site.css
