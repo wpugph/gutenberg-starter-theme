@@ -2,7 +2,7 @@
 /**
  * TeamWPUGPH Theme Customizer
  *
- * @package TeamWPUGPHTheme
+ * @package ThemeWPUGPH
  */
 
 /**

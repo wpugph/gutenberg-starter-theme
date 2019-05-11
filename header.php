@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package TeamWPUGPHTheme
+ * @package ThemeWPUGPH
  */
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
 
 <body <?php body_class(); ?>>
 
-<a class="screen-reader-text" href="#main-content"><?php esc_html_e( 'Skip to content', 'teamwpugph' ); ?></a>
+<a class="screen-reader-text" href="#main-content"><?php esc_html_e( 'Skip to content', 'themewpugph' ); ?></a>
 
 <!--HEADER-->
 <header class="nav uk-sticky uk-sticky-below uk-sticky-fixed uk-box-shadow-medium" data-uk-sticky="cls-active: uk-background-default; top: 100vh; animation: uk-animation-slide-top; show-on-up: true;">
@@ -34,7 +34,7 @@
 						if ( has_custom_logo() ) {
 							echo the_custom_logo(); 
 						} else {
-							_e( 'Logo', 'teamwpugph' );
+							_e( 'Logo', 'themewpugph' );
 						}
 					?>
 					</a>

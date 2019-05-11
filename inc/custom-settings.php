@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Settings_API
  *
- * @package TeamWPUGPHTheme
+ * @package ThemeWPUGPH
  */
 class TeamWPUGPH_Add_Settings_Field 
 {
@@ -24,7 +24,7 @@ class TeamWPUGPH_Add_Settings_Field
 
         add_settings_section( 
             'teamwpugph_custom_settings',
-            __( 'Company/Organization Details', 'teamwpugph' ),
+            __( 'Company/Organization Details', 'themewpugph' ),
             array( $this, 'render_section' ),
             'general'
         );
@@ -32,7 +32,7 @@ class TeamWPUGPH_Add_Settings_Field
         register_setting( 'general', 'teamwpugph_org_name', 'sanitize_text_field' );
 		add_settings_field(
 			'teamwpugph_org_name_id',
-			'<label for="teamwpugph_org_name_id">' . __( 'Organization Name' , 'teamwpugph' ) . '</label>',
+			'<label for="teamwpugph_org_name_id">' . __( 'Organization Name' , 'themewpugph' ) . '</label>',
 			array( $this, 'render_org_name_field' ),
             'general',
             'teamwpugph_custom_settings'
@@ -41,7 +41,7 @@ class TeamWPUGPH_Add_Settings_Field
         register_setting( 'general', 'teamwpugph_org_year', 'sanitize_text_field' );
 		add_settings_field(
 			'teamwpugph_org_year_id',
-			'<label for="teamwpugph_org_year_id">' . __( 'Year of Foundation' , 'teamwpugph' ) . '</label>',
+			'<label for="teamwpugph_org_year_id">' . __( 'Year of Foundation' , 'themewpugph' ) . '</label>',
 			array( $this, 'render_org_year_field' ),
             'general',
             'teamwpugph_custom_settings'
@@ -55,7 +55,7 @@ class TeamWPUGPH_Add_Settings_Field
      * @return void
      */
     public function render_section() {
-        esc_html_e( 'Custom settings for theme use.', 'teamwpugph' );
+        esc_html_e( 'Custom settings for theme use.', 'themewpugph' );
     }
 
     public function render_org_name_field() {

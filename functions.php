@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package TeamWPUGPHTheme
+ * @package ThemeWPUGPH
  */
 
 require get_template_directory() . '/inc/defines.php';
@@ -23,9 +23,9 @@ if ( ! function_exists( 'teamwpugph_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on teamwpugph, use a find and replace
-		 * to change 'teamwpugph' to the name of your theme in all the template files.
+		 * to change 'themewpugph' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'teamwpugph', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'themewpugph', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -47,7 +47,7 @@ if ( ! function_exists( 'teamwpugph_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary-menu' => esc_html__( 'Primary Menu', 'teamwpugph' ),
+			'primary-menu' => esc_html__( 'Primary Menu', 'themewpugph' ),
 		) );
 
 		/*
@@ -92,22 +92,22 @@ if ( ! function_exists( 'teamwpugph_setup' ) ) :
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name'  => __( 'Strong Blue', 'teamwpugph' ),
+				'name'  => __( 'Strong Blue', 'themewpugph' ),
 				'slug'  => 'strong-blue',
 				'color' => '#0073aa',
 			),
 			array(
-				'name'  => __( 'Lighter Blue', 'teamwpugph' ),
+				'name'  => __( 'Lighter Blue', 'themewpugph' ),
 				'slug'  => 'lighter-blue',
 				'color' => '#229fd8',
 			),
 			array(
-				'name'  => __( 'Very Light Gray', 'teamwpugph' ),
+				'name'  => __( 'Very Light Gray', 'themewpugph' ),
 				'slug'  => 'very-light-gray',
 				'color' => '#eee',
 			),
 			array(
-				'name'  => __( 'Very Dark Gray', 'teamwpugph' ),
+				'name'  => __( 'Very Dark Gray', 'themewpugph' ),
 				'slug'  => 'very-dark-gray',
 				'color' => '#444',
 			),
@@ -142,7 +142,7 @@ function teamwpugph_fonts_url() {
 	 * supported by Noto Serif, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$notoserif = esc_html_x( 'on', 'Noto Serif font: on or off', 'teamwpugph' );
+	$notoserif = esc_html_x( 'on', 'Noto Serif font: on or off', 'themewpugph' );
 
 	if ( 'off' !== $notoserif ) {
 		$font_families = array();

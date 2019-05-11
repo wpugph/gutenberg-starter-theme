@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package TeamWPUGPHTheme
+ * @package ThemeWPUGPH
  */
 
 if ( ! function_exists( 'teamwpugph_posted_on' ) ) :
@@ -26,13 +26,13 @@ if ( ! function_exists( 'teamwpugph_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'teamwpugph' ),
+			esc_html_x( 'Posted on %s', 'post date', 'themewpugph' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'teamwpugph' ),
+			esc_html_x( 'by %s', 'post author', 'themewpugph' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -50,17 +50,17 @@ if ( ! function_exists( 'teamwpugph_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'teamwpugph' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'themewpugph' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<p class="uk-article-meta uk-link-muted">' . esc_html__( 'Posted in %1$s', 'teamwpugph' ) . '</p>', $categories_list ); // WPCS: XSS OK.
+				printf( '<p class="uk-article-meta uk-link-muted">' . esc_html__( 'Posted in %1$s', 'themewpugph' ) . '</p>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '<li class="uk-label uk-link-reset">', '</li>' . "\n" . '<li class="uk-label uk-link-reset">', '</li>' );	
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<p class="screen-reader-text">%s:</p>', esc_html__( 'Tag list', 'teamwpugph' ) );
+				printf( '<p class="screen-reader-text">%s:</p>', esc_html__( 'Tag list', 'themewpugph' ) );
 				echo '<ul class="uk-padding-remove-left">' . "\n" .  $tags_list . '</ul>' . "\n";
 			}
 		}
@@ -71,7 +71,7 @@ if ( ! function_exists( 'teamwpugph_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'teamwpugph' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'themewpugph' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -88,7 +88,7 @@ if ( ! function_exists( 'teamwpugph_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'teamwpugph' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'themewpugph' ),
 					array(
 						'span' => array(
 							'class' => array(),
