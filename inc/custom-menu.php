@@ -28,7 +28,7 @@ class UIKit3_Walker_Nav_Menu extends Walker_Nav_Menu
         }
         $indent = str_repeat( $t, $depth );
 
-        $output .= $indent . '<div class="uk-navbar-dropdown">' . "\n";
+        $output .= $indent . '<div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left">' . "\n";
         $output .= $indent . "\t" . '<ul class="uk-nav uk-navbar-dropdown-nav">' . "\n";
     }
 
@@ -76,7 +76,7 @@ class UIKit3_Walker_Nav_Menu extends Walker_Nav_Menu
 			$t = "\t";
 			$n = "\n";
 		}
-		$indent = ( $depth ) ? str_repeat( $t, $depth ) : '';        
+        $indent = ( $depth ) ? str_repeat( $t, $depth ) : '';        
         $item_output = '';
 
         $object     = $item->object;
@@ -101,13 +101,13 @@ class UIKit3_Walker_Nav_Menu extends Walker_Nav_Menu
             }
         }
 
-        $item_output     .= '<li class="' .  implode(' ', $classes) . '">';
+        $item_output     .= $indent . '<li class="' .  implode(' ', $classes) . '">';
 
         //Add SPAN if no Permalink
         if ($permalink && $permalink != '#') {
             $item_output .= '<a href="' . $permalink . '">';
         } else {
-            $item_output .= '<span>';
+            $item_output .= '<a href="#">';
         }
         $item_output .= $title;
 
@@ -120,7 +120,7 @@ class UIKit3_Walker_Nav_Menu extends Walker_Nav_Menu
         if ($permalink && $permalink != '#') {
             $item_output .= '</a>';
         } else {
-            $item_output .= '</span>';
+            $item_output .= '</a>';
         }
 
         /**
