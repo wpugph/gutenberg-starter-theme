@@ -46,6 +46,7 @@ if ( ! function_exists( 'teamwpugph_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function teamwpugph_entry_footer() {
+
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
@@ -56,10 +57,11 @@ if ( ! function_exists( 'teamwpugph_entry_footer' ) ) :
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'teamwpugph' ) );
+			$tags_list = get_the_tag_list( '<li class="uk-label uk-link-reset">', '</li>' . "\n" . '<li class="uk-label uk-link-reset">', '</li>' );	
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'teamwpugph' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<p class="screen-reader-text">%s:</p>', esc_html__( 'Tag list', 'teamwpugph' ) );
+				echo '<ul class="uk-padding-remove-left">' . "\n" .  $tags_list . '</ul>' . "\n";
 			}
 		}
 
