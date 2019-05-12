@@ -54,5 +54,5 @@
 </header>
 <!--/HEADER-->
 
-<main id="main-content" class="uk-section uk-padding-remove-vertical"><div class="uk-container">
+<main id="main-content" class="uk-section"><div class="uk-container">
 	

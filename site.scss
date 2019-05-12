@@ -18,6 +18,19 @@
 
 // 5. Quick Inline Hacks
 
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+main#main-content {
+    min-height: 100vh;
+    margin-top: -80px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+footer#colophon {
+    margin-top: -100px;
+}
 /* 
 Text meant only for screen readers. 
 @see https://make.wordpress.org/accessibility/handbook/markup/the-css-class-screen-reader-text/
