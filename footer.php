@@ -13,7 +13,7 @@ $org_name = get_option('teamwpugph_org_name', '');
 $org_year = get_option('teamwpugph_org_year', '');
 
 ?>
-</main>
+</div></main>
 <!-- #main-content -->
 
 <footer id="colophon" class="site-footer uk-section uk-section-default uk-section-small">

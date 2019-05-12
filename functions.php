@@ -168,15 +168,13 @@ function teamwpugph_scripts() {
 	if (defined('WP_DEBUG') && true === WP_DEBUG) {
 
 		$mainstyles		= '/site.css';
-		$blockstyles 	= '/css/blocks.css';
-		
+
 		$uikitjs		= '/lib/uikit/dist/js/uikit.js';
 		$uikiticonsjs	= '/lib/uikit/dist/js/uikit-icons.js';
 
 	} else {
 
 		$mainstyles		= '/site.min.css';
-		$blockstyles 	= '/css/blocks.css';
 
 		$uikitjs		= '/lib/uikit/dist/js/uikit.min.js';
 		$uikiticonsjs	= '/lib/uikit/dist/js/uikit-icons.min.js';
@@ -184,7 +182,6 @@ function teamwpugph_scripts() {
 	}
 
 	wp_enqueue_style( 'teamwpugph-style', get_stylesheet_directory_uri() . $mainstyles );
-	wp_enqueue_style( 'teamwpugph-blocks-style', get_stylesheet_directory_uri() . $blockstyles );
 	wp_enqueue_style( 'teamwpugph-fonts', teamwpugph_fonts_url() );
 
 	wp_enqueue_script( 'uikit', get_stylesheet_directory_uri() . $uikitjs, array(), '3.1.2', false );
