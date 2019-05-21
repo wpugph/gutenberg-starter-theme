@@ -38,17 +38,29 @@
 						}
 					?>
 					</a>
-				</div>
-			</div>
+
 			<?php
-			wp_nav_menu( array(
+						wp_nav_menu(array(
 				'theme_location'	=> 'primary-menu',
-				'container_class'	=> 'uk-navbar-right',
+							'container_class'	=> '',
 				'menu_class'		=> 'uk-navbar-nav',
 				'items_wrap'		=> '<ul class="%2$s">%3$s</ul>',
 				'walker'			=> new UIKit3_Walker_Nav_Menu(),
-			) );
+						));
 			?>
+					</div>
+				</div>				
+				<div class="uk-navbar-right">
+
+					<div>
+						<a class="uk-navbar-toggle" uk-search-icon href="#"></a>
+						<div class="uk-drop uk-background-default uk-padding-small uk-padding-remove-vertical" uk-drop="mode: click; pos: left-center; offset: 0">
+							<?php get_search_form(); ?>
+						</div>
+					</div>
+
+				</div>
+
 		</nav>
 	</div>
 </header>
