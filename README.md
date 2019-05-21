@@ -30,10 +30,8 @@ After WordPress setup follow these steps:
 3. Configure Visual Studio Code, add the following
 ```
 {
-	"settings": {
-		"phpcs.enable":   true,
-		"phpcs.standard": "WordPress"
-	}
+	"phpcs.enable":   true,
+	"phpcs.standard": "WordPress"
 }
 ```
 
