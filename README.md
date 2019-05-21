@@ -12,15 +12,17 @@ The idea of the default look for this theme is to as closely replicate that of t
 ## GNU General Public License v2
 This theme, like WordPress, is licensed under the GPL. Use it to make something cool, have fun, and share what you've learned with others.
 
-## Installation
-1. ...
-2. ...
-
-## Development and Testing
+## Plugins and Test Data
 After WordPress setup follow these steps:
 
 1. Install plugin: [Query Monitor](https://wordpress.org/plugins/query-monitor/) by Jogn Blackbourn
 2. Install test data: [WP Test](https://github.com/poststatus/wptest#installation)
+
+## Installation
+1. Clone inside theme folder: /wp-content/themes
+```git clone --recursive https://github.com/wpugph/themewpugph.git```
+2. Compile stylesheet site.scs
+3. Activate the theme
 
 ## Roadmap ([See v1](https://github.com/wpugph/gutenberg-starter-theme/projects/1))
 - Integrate UIKit 3
