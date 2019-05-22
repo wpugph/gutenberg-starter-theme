@@ -24,7 +24,7 @@
 <a class="screen-reader-text" href="#main-content"><?php esc_html_e( 'Skip to content', 'themewpugph' ); ?></a>
 
 <!--HEADER-->
-<header class="nav uk-sticky uk-sticky-below uk-sticky-fixed uk-box-shadow-medium" data-uk-sticky="cls-active: uk-background-default; top: 100vh; animation: uk-animation-slide-top; show-on-up: true;">
+	<header class="nav uk-sticky uk-sticky-below uk-sticky-fixed uk-box-shadow-medium" data-uk-sticky="cls-active: uk-background-default; animation: uk-animation-slide-top; show-on-up: true;">
 	<div class="uk-container">
 		<nav class="uk-navbar uk-navbar-container uk-navbar-transparent" data-uk-navbar>
 			<div class="uk-navbar-left">
