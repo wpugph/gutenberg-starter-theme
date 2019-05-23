@@ -26,11 +26,11 @@
 @import "scss/_import-variables.scss";
 
 // 2. Import default variables and available mixins.
-@import "lib/uikit/src/scss/variables.scss";
-@import "lib/uikit/src/scss/mixins.scss";
+@import "lib/uikit/src/scss/variables-theme.scss";
+@import "lib/uikit/src/scss/mixins-theme.scss";
 
 // 3. Your custom mixin overwrites.
-@import "scss/_import-mixins";
+@import "scss/_import-mixins.scss";
 
 // 4. Import UIkit
 @import "lib/uikit/src/scss/uikit.scss";
@@ -43,7 +43,6 @@
 
 main#main-content {
     min-height: 100vh;
-    margin-top: -80px;
     padding-top: 80px;
     padding-bottom: 100px;
 }

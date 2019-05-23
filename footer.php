@@ -9,28 +9,33 @@
  * @package ThemeWPUGPH
  */
 
-$org_name = get_option('teamwpugph_org_name', '');
-$org_year = get_option('teamwpugph_org_year', '');
+$org_name = get_option( 'themewpugph_org_name', '' );
+$org_year = get_option( 'themewpugph_org_year', '' );
 
 ?>
-</div></main>
+		</div>
+	</main>
 <!-- #main-content -->
 
 <footer id="colophon" class="site-footer uk-section uk-section-default uk-section-small">
 	<div class="uk-container">
 		<p class="uk-text-small uk-text-center">			
-			<?php printf( esc_html__('Copyright &copy; %s&ndash;%s %s', 'themewpugph' ), esc_html__( $org_year, 'themewpugph' ), date( "Y" ), esc_html__( $org_name, 'themewpugph' ) ); ?>
+			<?php
+				/* translators: %s: Year founded, i.e. 1999; %s: current year; %s: name of organisation */
+				printf( esc_html__( 'Copyright &copy; %1$s&ndash;%2$s %3$s', 'themewpugph' ), esc_html( $org_year ), esc_html( date( 'Y' ) ), esc_html( $org_name ) );
+			?>
 			&emsp;
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>">
 			<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( 'Proudly powered by %s', 'themewpugph' ), 'WordPress' );
-			?></a>
+			?>
+			</a>
 			<span class="sep">&emsp;|&emsp;</span>
 			<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %s', 'themewpugph' ), '<a href="' . TEAMWPUGPH_HOMEPAGE . '">' . TEAMWPUGPH_TEAMNAME . '</a>' );
-			?>			
+				/* translators: 1: Theme name, 2: Theme author. */
+				printf( esc_html__( 'Theme: %s', 'themewpugph' ), '<a href="' . esc_attr( themewpugph_HOMEPAGE ) . '">' . esc_html( themewpugph_TEAMNAME ) . '</a>' );
+			?>
 		</p>
 	</div>
 </footer><!-- #colophon -->

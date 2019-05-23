@@ -14,27 +14,33 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses teamwpugph_header_style()
+ * @uses themewpugph_header_style()
  */
-function teamwpugph_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'teamwpugph_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'teamwpugph_header_style',
-	) ) );
+function themewpugph_custom_header_setup() {
+	add_theme_support(
+		'custom-header',
+		apply_filters(
+			'themewpugph_custom_header_args',
+			array(
+				'default-image'      => '',
+				'default-text-color' => '000000',
+				'width'              => 1000,
+				'height'             => 250,
+				'flex-height'        => true,
+				'wp-head-callback'   => 'themewpugph_header_style',
+			)
+		)
+	);
 }
-add_action( 'after_setup_theme', 'teamwpugph_custom_header_setup' );
+add_action( 'after_setup_theme', 'themewpugph_custom_header_setup' );
 
-if ( ! function_exists( 'teamwpugph_header_style' ) ) :
+if ( ! function_exists( 'themewpugph_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see teamwpugph_custom_header_setup().
+	 * @see themewpugph_custom_header_setup().
 	 */
-	function teamwpugph_header_style() {
+	function themewpugph_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
@@ -48,24 +54,24 @@ if ( ! function_exists( 'teamwpugph_header_style' ) ) :
 		// If we get this far, we have custom styles. Let's do this.
 		?>
 		<style type="text/css">
-		<?php
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-		?>
-			.site-title,
-			.site-description {
-				position: absolute;
-				clip: rect(1px, 1px, 1px, 1px);
-			}
-		<?php
-			// If the user has set a custom color for the text use that.
+			<?php
+			// Has the text been hidden?
+			if ( ! display_header_text() ) :
+				?>
+				.site-title,
+				.site-description {
+					position: absolute;
+					clip: rect(1px, 1px, 1px, 1px);
+				}
+				<?php
+				// If the user has set a custom color for the text use that.
 			else :
-		?>
-			.site-title a,
-			.site-description {
-				color: #<?php echo esc_attr( $header_text_color ); ?>;
-			}
-		<?php endif; ?>
+				?>
+				.site-title a,
+				.site-description {
+					color: #<?php echo esc_attr( $header_text_color ); ?>;
+				}
+			<?php endif; ?>
 		</style>
 		<?php
 	}

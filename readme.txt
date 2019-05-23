@@ -1,4 +1,4 @@
-=== teamwpugph ===
+=== themewpugph ===
 
 Contributors: everyone welcome
 Tags: translation-ready
@@ -25,7 +25,7 @@ Description
 
 = Does this theme support any plugins? =
 
-teamwpugph includes support for Infinite Scroll in Jetpack.
+themewpugph includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

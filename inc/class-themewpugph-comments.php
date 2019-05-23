@@ -1,12 +1,12 @@
 <?php
 /**
  * ThemeWPUGPH Comments
- * 
+ *
  * @package ThemeWPUGPH
  */
 
 if ( ! class_exists( 'ThemeWPUGPH_Comments' ) ) :
-  class ThemeWPUGPH_Comments extends Walker_Comment {
+class ThemeWPUGPH_Comments extends Walker_Comment {
 
 	/**
 	 * Outputs a comment in the HTML5 format.

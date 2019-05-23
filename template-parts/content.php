@@ -10,6 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -21,17 +22,22 @@
 			endif;
 		endif;
 
-		if ( 'post' === get_post_type() ) : ?>
+		if ( 'post' === get_post_type() ) :
+			?>
+
 		<div class="entry-meta">
-			<?php teamwpugph_posted_on(); ?>
+			<?php themewpugph_posted_on(); ?>
 		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+
+			<?php
+		endif;
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
+		the_content(
+			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
 					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'themewpugph' ),
@@ -42,16 +48,20 @@
 					)
 				),
 				get_the_title()
-			) );
+			)
+		);
 
-			wp_link_pages( array(
+		wp_link_pages(
+			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'themewpugph' ),
 				'after'  => '</div>',
-			) );
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php teamwpugph_entry_footer(); ?>
+		<?php themewpugph_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+
 </article><!-- #post-<?php the_ID(); ?> -->

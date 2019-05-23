@@ -1,6 +1,6 @@
 <?php
 /**
- * TeamWPUGPH functions and definitions
+ * ThemeWPUGPH functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -8,9 +8,9 @@
  */
 
 require get_template_directory() . '/inc/defines.php';
-require get_template_directory() . '/inc/custom-settings.php';
+require get_template_directory() . '/inc/class-themewpugph-add-settings-field.php';
 
-if ( ! function_exists( 'teamwpugph_setup' ) ) :
+if ( ! function_exists( 'themewpugph_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -18,11 +18,11 @@ if ( ! function_exists( 'teamwpugph_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function teamwpugph_setup() {
+	function themewpugph_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on teamwpugph, use a find and replace
+		 * If you're building a theme based on themewpugph, use a find and replace
 		 * to change 'themewpugph' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'themewpugph', get_template_directory() . '/languages' );
@@ -46,27 +46,38 @@ if ( ! function_exists( 'teamwpugph_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary-menu' => esc_html__( 'Primary Menu', 'themewpugph' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary-menu' => esc_html__( 'Primary Menu', 'themewpugph' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'_s_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -76,12 +87,15 @@ if ( ! function_exists( 'teamwpugph_setup' ) ) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 250,
+				'width'       => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 
 		// Adding support for core block visual styles.
 		add_theme_support( 'wp-block-styles' );
@@ -90,34 +104,37 @@ if ( ! function_exists( 'teamwpugph_setup' ) ) :
 		add_theme_support( 'align-wide' );
 
 		// Add support for custom color scheme.
-		add_theme_support( 'editor-color-palette', array(
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name'  => __( 'Strong Blue', 'themewpugph' ),
-				'slug'  => 'strong-blue',
-				'color' => '#0073aa',
-			),
-			array(
-				'name'  => __( 'Lighter Blue', 'themewpugph' ),
-				'slug'  => 'lighter-blue',
-				'color' => '#229fd8',
-			),
-			array(
-				'name'  => __( 'Very Light Gray', 'themewpugph' ),
-				'slug'  => 'very-light-gray',
-				'color' => '#eee',
-			),
-			array(
-				'name'  => __( 'Very Dark Gray', 'themewpugph' ),
-				'slug'  => 'very-dark-gray',
-				'color' => '#444',
-			),
-		) );
+				array(
+					'name'  => __( 'Strong Blue', 'themewpugph' ),
+					'slug'  => 'strong-blue',
+					'color' => '#0073aa',
+				),
+				array(
+					'name'  => __( 'Lighter Blue', 'themewpugph' ),
+					'slug'  => 'lighter-blue',
+					'color' => '#229fd8',
+				),
+				array(
+					'name'  => __( 'Very Light Gray', 'themewpugph' ),
+					'slug'  => 'very-light-gray',
+					'color' => '#eee',
+				),
+				array(
+					'name'  => __( 'Very Dark Gray', 'themewpugph' ),
+					'slug'  => 'very-dark-gray',
+					'color' => '#444',
+				),
+			)
+		);
 
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
 	}
 endif;
-add_action( 'after_setup_theme', 'teamwpugph_setup' );
+add_action( 'after_setup_theme', 'themewpugph_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -126,15 +143,15 @@ add_action( 'after_setup_theme', 'teamwpugph_setup' );
  *
  * @global int $content_width
  */
-function teamwpugph_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'teamwpugph_content_width', 640 );
+function themewpugph_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'themewpugph_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'teamwpugph_content_width', 0 );
+add_action( 'after_setup_theme', 'themewpugph_content_width', 0 );
 
 /**
  * Register Google Fonts
  */
-function teamwpugph_fonts_url() {
+function themewpugph_fonts_url() {
 	$fonts_url = '';
 
 	/*
@@ -145,12 +162,12 @@ function teamwpugph_fonts_url() {
 	$notoserif = esc_html_x( 'on', 'Noto Serif font: on or off', 'themewpugph' );
 
 	if ( 'off' !== $notoserif ) {
-		$font_families = array();
+		$font_families   = array();
 		$font_families[] = 'Noto Serif:400,400italic,700,700italic';
 
 		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
+			'family' => rawurlencode( implode( '|', $font_families ) ),
+			'subset' => rawurlencode( 'latin,latin-ext' ),
 		);
 
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
@@ -163,37 +180,35 @@ function teamwpugph_fonts_url() {
 /**
  * Enqueue scripts and styles.
  */
-function teamwpugph_scripts() {
+function themewpugph_scripts() {
 
-	if (defined('WP_DEBUG') && true === WP_DEBUG) {
+	if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 
-		$mainstyles		= '/site.css';
-
-		$uikitjs		= '/lib/uikit/dist/js/uikit.js';
-		$uikiticonsjs	= '/lib/uikit/dist/js/uikit-icons.js';
+		$mainstyles   = '/site.css';
+		$uikitjs      = '/lib/uikit/dist/js/uikit.js';
+		$uikiticonsjs = '/lib/uikit/dist/js/uikit-icons.js';
 
 	} else {
 
-		$mainstyles		= '/site.min.css';
-
-		$uikitjs		= '/lib/uikit/dist/js/uikit.min.js';
-		$uikiticonsjs	= '/lib/uikit/dist/js/uikit-icons.min.js';
+		$mainstyles   = '/site.min.css';
+		$uikitjs      = '/lib/uikit/dist/js/uikit.min.js';
+		$uikiticonsjs = '/lib/uikit/dist/js/uikit-icons.min.js';
 
 	}
 
-	wp_enqueue_style( 'teamwpugph-style', get_stylesheet_directory_uri() . $mainstyles );
-	wp_enqueue_style( 'teamwpugph-fonts', teamwpugph_fonts_url() );
+	wp_enqueue_style( 'themewpugph-style', get_stylesheet_directory_uri() . $mainstyles );
+	wp_enqueue_style( 'themewpugph-fonts', themewpugph_fonts_url() );
 
 	wp_enqueue_script( 'uikit', get_stylesheet_directory_uri() . $uikitjs, array(), '3.1.2', false );
 	wp_enqueue_script( 'uikit-icons', get_stylesheet_directory_uri() . $uikiticonsjs, array(), '3.1.2', false );
 }
-add_action( 'wp_enqueue_scripts', 'teamwpugph_scripts' );
+add_action( 'wp_enqueue_scripts', 'themewpugph_scripts' );
 
 /**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
-require get_template_directory() . '/inc/custom-menu.php';
+require get_template_directory() . '/inc/class-uikit3-walker-nav-menu.php';
 
 /**
  * Custom template tags for this theme.
@@ -220,4 +235,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Custom Walker Comment
  */
-require get_template_directory() . '/inc/class-teamwpugph-comments.php';
+require get_template_directory() . '/inc/class-themewpugph-comments.php';

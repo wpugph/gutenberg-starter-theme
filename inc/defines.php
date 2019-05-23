@@ -1,4 +1,9 @@
 <?php
+/**
+ * Theme specific constants
+ *
+ * @package ThemeWPUGPH
+ */
 
-define( 'TEAMWPUGPH_TEAMNAME', 'Team WPUGPH');
-define( 'TEAMWPUGPH_HOMEPAGE', 'https://github.com/wpugph/gutenberg-starter-theme' );
+define( 'THEMEWPUGPH_TEAMNAME', 'Theme WPUGPH' );
+define( 'THEMEWPUGPH_HOMEPAGE', 'https://github.com/wpugph/themewpugph' );

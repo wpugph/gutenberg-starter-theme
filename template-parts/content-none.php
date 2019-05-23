@@ -10,15 +10,18 @@
 ?>
 
 <section class="no-results not-found">
+
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'themewpugph' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
 		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+		if ( is_home() && current_user_can( 'publish_posts' ) ) :
+			?>
 
-			<p><?php
+			<p>
+				<?php
 				printf(
 					wp_kses(
 						/* translators: 1: link to WP admin new post page. */
@@ -31,7 +34,8 @@
 					),
 					esc_url( admin_url( 'post-new.php' ) )
 				);
-			?></p>
+				?>
+			</p>
 
 		<?php elseif ( is_search() ) : ?>
 
@@ -39,12 +43,14 @@
 			<?php
 				get_search_form();
 
-		else : ?>
+		else :
+			?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'themewpugph' ); ?></p>
 			<?php
 				get_search_form();
 
-		endif; ?>
+		endif;
+		?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

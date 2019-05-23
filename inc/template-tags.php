@@ -7,17 +7,18 @@
  * @package ThemeWPUGPH
  */
 
-if ( ! function_exists( 'teamwpugph_posted_on' ) ) :
+if ( ! function_exists( 'themewpugph_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function teamwpugph_posted_on() {
+	function themewpugph_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
@@ -41,11 +42,11 @@ if ( ! function_exists( 'teamwpugph_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'teamwpugph_entry_footer' ) ) :
+if ( ! function_exists( 'themewpugph_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function teamwpugph_entry_footer() {
+	function themewpugph_entry_footer() {
 
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
@@ -57,11 +58,12 @@ if ( ! function_exists( 'teamwpugph_entry_footer' ) ) :
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '<li class="uk-label uk-link-reset">', '</li>' . "\n" . '<li class="uk-label uk-link-reset">', '</li>' );	
+			$tags_list    = get_the_tag_list( '<li class="uk-label uk-link-reset">', '</li>' . "\n" . '<li class="uk-label uk-link-reset">', '</li>' );
+			$allowed_html = wp_kses_allowed_html( 'post' );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
 				printf( '<p class="screen-reader-text">%s:</p>', esc_html__( 'Tag list', 'themewpugph' ) );
-				echo '<ul class="uk-padding-remove-left">' . "\n" .  $tags_list . '</ul>' . "\n";
+				echo '<ul class="uk-padding-remove-left">' . "\n" . wp_kses( $tags_list, $allowed_html ) . '</ul>' . "\n";
 			}
 		}
 

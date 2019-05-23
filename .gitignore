@@ -2,3 +2,5 @@
 *.map
 scss/*.css
 site.css
+vendor/*
+wpcs/*

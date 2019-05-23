@@ -8,10 +8,11 @@
  */
 
 get_header(); ?>
-	
+
 	<main id="primary" class="site-main">
 
 		<section class="error-404 not-found">
+
 			<header class="page-header">
 				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'themewpugph' ); ?></h1>
 			</header><!-- .page-header -->
@@ -21,22 +22,23 @@ get_header(); ?>
 
 				<?php
 					get_search_form();
-
 					the_widget( 'WP_Widget_Recent_Posts' );
 				?>
 
 				<div class="widget widget_categories">
 					<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'themewpugph' ); ?></h2>
 					<ul>
-					<?php
-						wp_list_categories( array(
-							'orderby'    => 'count',
-							'order'      => 'DESC',
-							'show_count' => 1,
-							'title_li'   => '',
-							'number'     => 10,
-						) );
-					?>
+						<?php
+						wp_list_categories(
+							array(
+								'orderby'    => 'count',
+								'order'      => 'DESC',
+								'show_count' => 1,
+								'title_li'   => '',
+								'number'     => 10,
+							)
+						);
+						?>
 					</ul>
 				</div><!-- .widget -->
 

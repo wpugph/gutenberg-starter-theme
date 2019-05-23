@@ -7,14 +7,14 @@
  * @package ThemeWPUGPH
  */
 
- /**
-  * Custom settings
-  */
+/**
+ * Custom settings
+ */
 class ThemeWPUGPH_Add_Settings_Field {
 
 	public function __construct() {
 
-		add_action( 'admin_init', array( $this, 'addSection' ) );
+		add_action( 'admin_init', array( $this, 'add_section' ) );
 
 	}
 
@@ -25,7 +25,7 @@ class ThemeWPUGPH_Add_Settings_Field {
 	 */
 	public function add_section() {
 
-		add_settings_section( 
+		add_settings_section(
 			'themewpugph_custom_settings',
 			__( 'Company/Organization Details', 'themewpugph' ),
 			array( $this, 'render_section' ),
@@ -35,7 +35,7 @@ class ThemeWPUGPH_Add_Settings_Field {
 		register_setting( 'general', 'themewpugph_org_name', 'sanitize_text_field' );
 		add_settings_field(
 			'themewpugph_org_name_id',
-			'<label for="themewpugph_org_name_id">' . __( 'Organization Name' , 'themewpugph' ) . '</label>',
+			'<label for="themewpugph_org_name_id">' . __( 'Organization Name', 'themewpugph' ) . '</label>',
 			array( $this, 'render_org_name_field' ),
 			'general',
 			'themewpugph_custom_settings'
@@ -44,7 +44,7 @@ class ThemeWPUGPH_Add_Settings_Field {
 		register_setting( 'general', 'themewpugph_org_year', 'sanitize_text_field' );
 		add_settings_field(
 			'themewpugph_org_year_id',
-			'<label for="themewpugph_org_year_id">' . __( 'Year of Foundation' , 'themewpugph' ) . '</label>',
+			'<label for="themewpugph_org_year_id">' . __( 'Year of Foundation', 'themewpugph' ) . '</label>',
 			array( $this, 'render_org_year_field' ),
 			'general',
 			'themewpugph_custom_settings'
