@@ -34,7 +34,7 @@ $org_year = get_option( 'themewpugph_org_year', '' );
 			<span class="sep">&emsp;|&emsp;</span>
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %s', 'themewpugph' ), '<a href="' . esc_attr( themewpugph_HOMEPAGE ) . '">' . esc_html( themewpugph_TEAMNAME ) . '</a>' );
+				printf( esc_html__( 'Theme by %s', 'themewpugph' ), '<a href="' . esc_attr( THEMEWPUGPH_HOMEPAGE ) . '">' . esc_html( THEMEWPUGPH_TEAMNAME ) . '</a>' );
 			?>
 		</p>
 	</div>
