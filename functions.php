@@ -221,3 +221,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Custom Walker Comment
  */
 require get_template_directory() . '/inc/class-teamwpugph-comments.php';
+
+/**
+ * Custom Blocks
+ */
+require get_template_directory() . '/inc/custom-blocks.php';
