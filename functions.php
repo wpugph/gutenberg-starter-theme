@@ -191,7 +191,7 @@ function themewpugph_scripts() {
 	} else {
 
 		$mainstyles   = '/site.min.css';
-		$uikitjs      = '/lib/uikit/dist/js/uikit.min.js';
+		$uikitjs      = '/lib/uikit/dist/js/uikit.min.js';						
 		$uikiticonsjs = '/lib/uikit/dist/js/uikit-icons.min.js';
 
 	}
