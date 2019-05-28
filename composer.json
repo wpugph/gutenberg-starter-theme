@@ -1,0 +1,13 @@
+{
+    "require": {
+        "squizlabs/php_codesniffer": "*",
+        "htmlburger/carbon-fields": "^3.1",
+        "uikit/uikit": "^3.1"
+    },
+    "scripts": {
+        "install-wpcs": [
+            "composer create-project wp-coding-standards/wpcs --no-dev",
+            "./vendor/bin/phpcs --config-set installed_paths ./wpcs"
+        ]
+    }
+}

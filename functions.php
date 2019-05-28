@@ -7,8 +7,22 @@
  * @package ThemeWPUGPH
  */
 
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
+/**
+ * Autoload Carbon Fields.
+ *
+ * @return void
+ */
+function crb_load() {
+	require_once get_template_directory() . '/vendor/autoload.php';
+	\Carbon_Fields\Carbon_Fields::boot();
+}
+add_action( 'after_setup_theme', 'crb_load' );
+
 require get_template_directory() . '/inc/defines.php';
-require get_template_directory() . '/inc/class-themewpugph-add-settings-field.php';
+require get_template_directory() . '/inc/theme-options.php';
 
 if ( ! function_exists( 'themewpugph_setup' ) ) :
 	/**
@@ -185,14 +199,14 @@ function themewpugph_scripts() {
 	if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 
 		$mainstyles   = '/site.css';
-		$uikitjs      = '/lib/uikit/dist/js/uikit.js';
-		$uikiticonsjs = '/lib/uikit/dist/js/uikit-icons.js';
+		$uikitjs      = '/vendor/uikit/uikit/dist/js/uikit.js';
+		$uikiticonsjs = '/vendor/uikit/uikit/dist/js/uikit-icons.js';
 
 	} else {
 
 		$mainstyles   = '/site.min.css';
-		$uikitjs      = '/lib/uikit/dist/js/uikit.min.js';						
-		$uikiticonsjs = '/lib/uikit/dist/js/uikit-icons.min.js';
+		$uikitjs      = '/vendor/uikit/uikit/dist/js/uikit.min.js';						
+		$uikiticonsjs = '/vendor/uikit/uikit/dist/js/uikit-icons.min.js';
 
 	}
 

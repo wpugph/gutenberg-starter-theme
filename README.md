@@ -18,15 +18,21 @@ After WordPress setup follow these steps:
 1. Install plugin: [Query Monitor](https://wordpress.org/plugins/query-monitor/) by Jogn Blackbourn
 2. Install test data: [WP Test](https://github.com/poststatus/wptest#installation)
 
-## Installation
+## Theme Installation and Setup
 1. Clone inside theme folder: /wp-content/themes
 ```git clone --recursive https://github.com/wpugph/themewpugph.git```
-2. Compile stylesheet site.scs
-3. Activate the theme
+2. Install dependencies
+```composer install```
+3. Compile stylesheet site.scss
+4. Activate the theme
+
+## Dependecies
+- [UIKit 3](https://github.com/uikit/uikit) - A lightweight and modular front-end framework for developing fast and powerful web interfaces
+- [Carbon Fields ](https://github.com/htmlburger/carbon-fields) - A developer-oriented library for WordPress custom fields for all types of WordPress content.
 
 ## Roadmap ([See v1](https://github.com/wpugph/gutenberg-starter-theme/projects/1))
 - Integrate UIKit 3
-- Basic Gutenblocks for UIkit components
+- Basic Gutenblocks for UIKit 3 components
 - WP UIkit Customizer
 - A11y ready
 

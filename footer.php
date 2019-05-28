@@ -9,9 +9,8 @@
  * @package ThemeWPUGPH
  */
 
-$org_name = get_option( 'themewpugph_org_name', '' );
-$org_year = get_option( 'themewpugph_org_year', '' );
-
+$org_name = carbon_get_theme_option( 'themewpugph_org_name', '' );
+$org_year = carbon_get_theme_option( 'themewpugph_org_year', '' );
 ?>
 		</div>
 	</main>
