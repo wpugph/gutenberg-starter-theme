@@ -28,7 +28,7 @@ After WordPress setup follow these steps:
 
 ## Dependecies
 - [UIKit 3](https://github.com/uikit/uikit) - A lightweight and modular front-end framework for developing fast and powerful web interfaces
-- [Carbon Fields ](https://github.com/htmlburger/carbon-fields) - A developer-oriented library for WordPress custom fields for all types of WordPress content.
+- [Carbon Fields](https://github.com/htmlburger/carbon-fields) - A developer-oriented library for WordPress custom fields for all types of WordPress content.
 
 ## Roadmap ([See v1](https://github.com/wpugph/gutenberg-starter-theme/projects/1))
 - Integrate UIKit 3

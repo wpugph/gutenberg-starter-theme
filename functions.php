@@ -12,17 +12,15 @@ use Carbon_Fields\Field;
 
 /**
  * Autoload Carbon Fields.
- *
- * @return void
  */
-function crb_load() {
-	require_once get_template_directory() . '/vendor/autoload.php';
-	\Carbon_Fields\Carbon_Fields::boot();
-}
-add_action( 'after_setup_theme', 'crb_load' );
+require_once get_template_directory() . '/vendor/autoload.php';
+\Carbon_Fields\Carbon_Fields::boot();
 
+// Load theme constants.
 require get_template_directory() . '/inc/defines.php';
-require get_template_directory() . '/inc/theme-options.php';
+
+// Setup and load custom block containers.
+require get_template_directory() . '/inc/custom-blocks.php';
 
 if ( ! function_exists( 'themewpugph_setup' ) ) :
 	/**
@@ -33,6 +31,9 @@ if ( ! function_exists( 'themewpugph_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function themewpugph_setup() {
+
+		require get_template_directory() . '/inc/theme-options.php';
+
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -111,8 +112,8 @@ if ( ! function_exists( 'themewpugph_setup' ) ) :
 			)
 		);
 
-		// Adding support for core block visual styles.
-		add_theme_support( 'wp-block-styles' );
+		// Don't load core block visual styles.
+		// add_theme_support( 'wp-block-styles' );
 
 		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
