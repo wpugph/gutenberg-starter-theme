@@ -16,7 +16,7 @@ Block::make( 'custom-panel', __( 'Panel', 'themewpugph' ) )
 			Field::make( 'text', 'heading', __( 'Panel Heading', 'themewpugph' ) ),
 			Field::make( 'image', 'image', __( 'Panel Image', 'themewpugph' ) ),
 			Field::make( 'textarea', 'content', __( 'Panel Content', 'themewpugph' ) ),
-			Field::make( 'association', 'link', __( 'Panel Link', 'themewpugph' ) )
+            Field::make( 'association', 'link', __( 'Panel Link', 'themewpugph' ) )
 				->set_types(
 					array(
 						array(
