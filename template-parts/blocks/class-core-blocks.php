@@ -106,7 +106,7 @@ class Core_Blocks {
 	}
 
 	/**
-	* Override core/quote block.
+	* Override core/list block.
 	*
 	* @return string outer HTML markup.
 	*/
