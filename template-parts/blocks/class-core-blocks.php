@@ -54,6 +54,10 @@ class Core_Blocks {
 			case 'core/quote':
 				$block_html = self::render_quote();
 				break;
+			
+			case 'core/list':
+				$block_html = self::render_list();
+				break;
 
 			default:
 				break;
@@ -100,6 +104,24 @@ class Core_Blocks {
 
 		return $doc->saveHTML();
 	}
+
+	/**
+	* Override core/list block.
+	*
+	* @return string outer HTML markup.
+	*/
+	private static function render_list() {
+
+		$doc = new DOMDocument();
+		$doc->loadHTML( self::$block_content );
+
+		// The main list block
+		$ul = $doc->getElementsByTagName( 'ul' )->item( 0 );
+		$ul->setAttribute( 'class', 'uk-list' );
+
+		return $doc->saveHTML();
+
+	}	
 }
 
 // Initialize core blocks override.

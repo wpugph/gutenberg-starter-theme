@@ -17,7 +17,7 @@ add_filter(
 			'core/heading',
 			'core/subhead',
 			'core/table',
-			'core/lists',
+			'core/list',
 			'core/columns',
 			'carbon-fields/custom-panel',
 		);
